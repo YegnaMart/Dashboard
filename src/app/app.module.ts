@@ -26,6 +26,7 @@ import { NgCircleProgressModule } from 'ng-circle-progress';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { AngularPaginatorModule } from 'angular-paginator';
 
 import {Globals} from './globals';
 import { SidebarpartComponent } from './components/global/sidebarpart/sidebarpart.component';
@@ -33,6 +34,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { LoginComponent } from './pages/login/login.component';
 import { BidsComponent } from './pages/bids/bids.component';
+import { UsersComponent } from './pages/users/users.component';
 
 export const MaterialModules = [
   MatToolbarModule,
@@ -54,6 +56,7 @@ export const MaterialModules = [
     SidebarpartComponent,
     LoginComponent,
     BidsComponent,
+    UsersComponent,
   ],
   imports: [
     BrowserModule,
@@ -65,6 +68,7 @@ export const MaterialModules = [
     BrowserAnimationsModule,
     IvyCarouselModule,
     ChartsModule,
+    AngularPaginatorModule,
     ModalModule.forRoot(),
     BsDatepickerModule.forRoot(),
     NgCircleProgressModule.forRoot({

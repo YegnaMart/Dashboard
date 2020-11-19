@@ -22,3 +22,11 @@
 .mat-tab-label .mat-tab-label-content {
     font-size: 20px;
 }
+.page-item.active .page-link {
+    background-color:#2DBB54;
+    border-color: #2DBB54;
+}
+
+.page-link, .page-link:hover {
+    color: #2DBB54;
+}

@@ -1,0 +1,51 @@
+<div class="main-panel">
+    <app-sidebarpart [menuItem]="4"></app-sidebarpart>
+    <div class="panel-dashboard">
+        <div class="main-part">
+            <mat-tab-group>
+                <mat-tab>
+                    <ng-template mat-tab-label>
+                        All Users
+                    </ng-template>
+                    <div class="user-page">
+                        <div class="user-list">
+                            <div class="user-item" *ngFor="let item of array | angularPaginator: {itemsPerPage: 18, currentPage: currentPage }; let i = index">
+                                <img src="../../../../assets/params/images/imgs/admin-temp.png" class="user-item-photo" />
+                                <span class="user-item-status">Disable</span>
+                            </div>                            
+                        </div>
+                        <div class="pagination">
+                            <angular-paginator size="sm" (pageChange)="currentPage = $event"></angular-paginator>
+                        </div>
+                    </div>
+                </mat-tab>
+
+                <mat-tab>
+                    <ng-template mat-tab-label>
+                        Farmers
+                    </ng-template>
+                    Second Tab
+                </mat-tab>
+
+                <mat-tab>
+                    <ng-template mat-tab-label>
+                        Consumers
+                    </ng-template>
+                    Third Tab
+                </mat-tab>
+                <mat-tab>
+                    <ng-template mat-tab-label>
+                        Delivery
+                    </ng-template>
+                    Fourth Tab
+                </mat-tab>
+                <mat-tab>
+                    <ng-template mat-tab-label>
+                        Delivery Personal
+                    </ng-template>
+                    Fifth Tab
+                </mat-tab>
+            </mat-tab-group>
+        </div>        
+    </div>
+</div>
