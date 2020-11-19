@@ -34,16 +34,16 @@ export class HomeComponent implements OnInit {
   public lineChartColors: Color[] = [
     { // grey
       backgroundColor: 'rgba(148,159,177,0.2)',
-      borderColor: 'rgba(148,159,177,1)',
-      pointBackgroundColor: 'rgba(148,159,177,1)',
+      borderColor: '#3c6ef6',
+      pointBackgroundColor: '#3c6ef6',
       pointBorderColor: '#fff',
       pointHoverBackgroundColor: '#fff',
       pointHoverBorderColor: 'rgba(148,159,177,0.8)'
     },    
     { // red
       backgroundColor: 'rgba(255,0,0,0.3)',
-      borderColor: 'red',
-      pointBackgroundColor: 'rgba(148,159,177,1)',
+      borderColor: '#e75f49',
+      pointBackgroundColor: '#e75f49',
       pointBorderColor: '#fff',
       pointHoverBackgroundColor: '#fff',
       pointHoverBorderColor: 'rgba(148,159,177,0.8)'
