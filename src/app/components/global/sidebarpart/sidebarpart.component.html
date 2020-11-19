@@ -28,4 +28,18 @@
         <a class="menu__title" routerLink="/users" [ngClass]="{ 'menu_active': menuActive == '4', 'menu_deactive': menuActive != '4' }">Users</a>
       </div>
     </div>
+    <div class="end-part">
+       <div class="profile-photo-box">
+          <img class="profile-icon" src="../assets/params/images/imgs/admin-temp.png">
+          <div class="admin-text-box">
+            <span class="admin-text">Admin</span>
+          </div>
+       </div>
+       <div class="profile-name-box">
+          <span class="profile-name">Alex Abrham</span>
+       </div>
+       <div class="logout-box">
+          <a class="logout-text" routerLink="/login">Logout</a>
+       </div>
+    </div>
   </div>

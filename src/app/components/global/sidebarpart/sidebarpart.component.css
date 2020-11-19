@@ -50,4 +50,34 @@
   .menu_deactive {
     font-weight: 100;
     color: #707070;
-}
+  }
+  .end-part {
+    position: absolute;
+    bottom: 25px;
+    margin-left: 45px;
+    width: calc(100% - 45px);
+  }
+  .end-part .admin-text-box {
+    position: absolute;
+    bottom: 92px;
+    right: 98px;
+    background: #2DBB54;
+    border-radius: 16px;
+    padding: 0px 9px;
+  }
+  .end-part .admin-text-box .admin-text {
+    color: #ffffff;
+    font-size: 13px;
+  }
+  .end-part .profile-name-box {
+    margin-top: 10px;
+  }
+  .end-part .profile-name-box .profile-name {
+    font-size: 20px;
+  }
+  .end-part .logout-box {
+    margin-top: 20px;
+  }
+  .end-part .logout-box .logout-text {
+    color: #2DBB54;
+  }
