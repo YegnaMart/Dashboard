@@ -22,7 +22,7 @@
     justify-content: center;
 }
 .parent-page .right-part .mart-logo-box .logo-img {
-    width: 140px;
+    width: 135px;
 }
 .parent-page .user-login-part .login-item {
     width: 330px;   
@@ -35,7 +35,7 @@
 }
 .parent-page .user-login-part .login-item .login-input-box .login-text {
     border: 0px;
-    height: 40px;
+    height: 45px;
     font-size: 20px;
     border-radius: 10px;
     box-shadow: 
@@ -57,11 +57,12 @@
     width: 260px;
     margin-top: 51px;
     border-radius: 17px;
-    line-height: 30px;
+    line-height: 33px;
 }
 
 .parent-page .user-login-part .action-btn .action-text {
     color: #ffffff;
+    font-weight: bold;
 }
 
 .parent-page .user-forgot-part {
