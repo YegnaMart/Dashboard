@@ -1,0 +1,131 @@
+.main-panel .panel-dashboard .left-part {
+    width: 65%;
+    border-right: 1px solid #dddddd;
+    padding:20px;
+}
+.bids-list {
+    padding:10px;
+    margin-top: 40px;
+}
+.bids-list .bid-item-box {
+    width: 98%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 10px;
+    padding:25px;
+    box-shadow: 
+             0 0  0 1px rgb(255,255,255),
+             0.1em 0.1em 1em rgba(0,0,0,0.3);
+    margin-bottom: 20px;
+}
+.bids-list .bid-item-box {
+    align-items: stretch;
+}
+.bids-list .bid-item-box .item-first-box {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.bids-list .bid-item-box .item-detail-box, .bids-list .bid-item-box .item-last-box {
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+}
+
+.bids-list .bid-item-box .item-first-box .item-detail-box .item-detail-label {
+    color: #000000;
+    font-size: 21px;
+}
+.bids-list .bid-item-box .item-first-box .item-detail-box .item-detail-sub-label {
+    color: #707070;
+    font-size: 17px;
+}
+.bids-list .bid-item-box .item-first-box .item-detail-box .item-detail-last {
+    color: #707070;
+    font-size: 15px;
+    margin-top: 30px;
+}
+.bids-list .bid-item-box .item-last-box {
+    min-height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+.bids-list .bid-item-box .item-last-box .icon-love {
+    width: 33px;
+}
+.bids-list .bid-item-box .item-last-box .price-item {
+    color: #2DBB54;
+    font-weight: bold;
+    font-size: 17px;
+}
+
+.main-panel .panel-dashboard .right-part {
+    width: 35%;
+    padding:30px;
+}
+.main-panel .panel-dashboard .right-part .warehouse-image-box {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.main-panel .panel-dashboard .right-part .warehouse-image-box .warehouse-img {
+    width: 100%;
+}
+.main-panel .panel-dashboard .right-part .warehouse-suluta {
+    margin-top: 10px;
+    margin-left: 15px;
+}
+.main-panel .panel-dashboard .right-part .warehouse-suluta .warehouse-span-1 {
+    color: #707070;
+    font-size: 23px;
+}
+.main-panel .panel-dashboard .right-part .warehouse-suluta .warehouse-span-2 {
+    color: #000000;
+    font-size: 23px;
+    margin-left: 8px;
+}
+.main-panel .panel-dashboard .right-part .starting-price-box {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+.main-panel .panel-dashboard .right-part .starting-price-box .price-box-item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+.main-panel .panel-dashboard .right-part .starting-price-box .price-box-item .starting-text {
+    color: #707070;
+    font-size: 15px;
+}
+.main-panel .panel-dashboard .right-part .starting-price-box .price-box-item .starting-price {
+    color:#2DBB54;
+    font-size: 21px;
+    font-weight: bold;
+}
+.main-panel .panel-dashboard .right-part .photos-header-box {
+    padding:10px;
+    margin-top: 25px;
+    display: flex;
+    justify-content: space-between;
+}
+.main-panel .panel-dashboard .right-part .photos-header-box .photos-header-label {
+    color: #707070;
+    font-size: 21px;
+}
+.main-panel .panel-dashboard .right-part .photos-header-box .view-more {
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+}
+.main-panel .panel-dashboard .right-part .photos-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.main-panel .panel-dashboard .right-part .photos-list .photo-item {
+    width: 50%;
+}
+

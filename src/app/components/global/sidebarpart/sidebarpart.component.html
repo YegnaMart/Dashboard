@@ -1,0 +1,31 @@
+<div class="sidebar">
+    <div class="logo" routerLink="/">
+      <img class="icon_image" src="../assets/params/images/logo/mart-logo.png"/>
+    </div>
+    <div class="sidebar__menu">
+      <div class="menu__item">
+        <div class="icon">
+          <img class="item_icon" src="../assets/params/icons/icon-home.png">
+        </div>
+        <a class="menu__title" routerLink="/" [ngClass]="{ 'menu_active': menuActive == '1', 'menu_deactive': menuActive != '1' }">Home</a>
+      </div>    
+      <div class="menu__item">
+        <div class="icon">
+          <img class="item_icon" src="../assets/params/icons/icon-auctions.png">
+        </div>
+        <a class="menu__title" routerLink="/bids" [ngClass]="{ 'menu_active': menuActive == '2', 'menu_deactive': menuActive != '2' }">Bids/Auctions</a>
+      </div>  
+      <div class="menu__item">
+        <div class="icon">
+          <img class="item_icon" src="../assets/params/icons/icon-warehourse.png">
+        </div>
+        <a class="menu__title" routerLink="/warehouse" [ngClass]="{ 'menu_active': menuActive == '3', 'menu_deactive': menuActive != '3' }">Warehouses</a>
+      </div>  
+      <div class="menu__item">
+        <div class="icon">
+          <img class="item_icon" src="../assets/params/icons/icon-users.png">
+        </div>
+        <a class="menu__title" routerLink="/users" [ngClass]="{ 'menu_active': menuActive == '4', 'menu_deactive': menuActive != '4' }">Users</a>
+      </div>
+    </div>
+  </div>

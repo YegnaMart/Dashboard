@@ -1,0 +1,79 @@
+.parent-page {
+    display: flex;
+    flex-direction: row;
+}
+.parent-page .left-part {
+    width: 70%;
+}
+.parent-page .left-part .label-img {
+    width: 100%;
+    height: 100vh;
+}
+
+.parent-page .right-part {
+    padding-top: 5%;
+    width: 30%;
+    background-color: #ffffff;
+}
+
+.parent-page .right-part .mart-logo-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.parent-page .right-part .mart-logo-box .logo-img {
+    width: 140px;
+}
+.parent-page .user-login-part .login-item {
+    width: 330px;   
+    margin-top: 50px; 
+}
+
+.parent-page .user-login-part .login-item .login-item-label {
+    color: #707070;
+    font-size: 17px;
+}
+.parent-page .user-login-part .login-item .login-input-box .login-text {
+    border: 0px;
+    height: 40px;
+    font-size: 20px;
+    border-radius: 10px;
+    box-shadow: 
+             0 0  0 1px rgb(255,255,255),
+             0.1em 0.1em 1em rgba(0,0,0,0.2);
+}
+.parent-page .user-login-part {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.parent-page .user-login-part .login-item .login-input-box {
+    margin-top: 8px;
+}
+
+.parent-page .user-login-part .action-btn {
+    background: #2DBB54;
+    width: 260px;
+    margin-top: 51px;
+    border-radius: 17px;
+    line-height: 30px;
+}
+
+.parent-page .user-login-part .action-btn .action-text {
+    color: #ffffff;
+}
+
+.parent-page .user-forgot-part {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-right: calc((100% - 330px)/2);
+    margin-top: 30px;
+}
+
+.parent-page .user-forgot-part .forgot-password {
+    font-size: 15px;
+    color: #2DBB54;
+    font-weight: 300;
+}

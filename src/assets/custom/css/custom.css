@@ -1,0 +1,24 @@
+.main-panel {
+    display: flex;
+    margin-left: 250px;
+    height: 100vh;
+    background: #ffffff;
+}
+
+.main-panel .panel-dashboard {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    padding-left: 20px;
+}
+
+.mat-tab-nav-bar, .mat-tab-header {
+    border-bottom: none !important;
+}
+
+.mat-tab-group.mat-primary .mat-ink-bar, .mat-tab-nav-bar.mat-primary .mat-ink-bar {
+    background-color:#2DBB54 !important;
+}
+.mat-tab-label .mat-tab-label-content {
+    font-size: 20px;
+}
