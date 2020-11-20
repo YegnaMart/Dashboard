@@ -7,6 +7,21 @@
     justify-content: space-between;
     width: 100%;
 }
+.main-panel .panel-dashboard .wares-page .header-part .select-group {
+    margin-top: -14px;
+}
+.main-panel .panel-dashboard .wares-page .header-part .select-group .custom {
+    width: 100px;
+}
+/* .ng-select.custom {
+    border:0px;
+    min-height: 0px;
+    border-radius: 0;
+}
+.ng-select.custom .ng-select-container  {            
+    min-height: 0px;
+    border-radius: 0;
+} */
 .main-panel .panel-dashboard .wares-page .header-part .header-title, .main-panel .panel-dashboard .wares-page .header-part .sort-by {
     font-size: 20px;
 }
@@ -51,4 +66,14 @@
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.ng-select.custom {
+    border:0px;
+    min-height: 0px;
+    border-radius: 0;
+}
+.ng-select.custom .ng-select-container  {            
+    min-height: 0px;
+    border-radius: 0;
 }
