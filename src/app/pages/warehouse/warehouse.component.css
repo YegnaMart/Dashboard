@@ -1,8 +1,11 @@
 .main-panel .panel-dashboard .wares-page {
-    width: 95%;
+    width: 90%;
 }
 .main-panel .panel-dashboard .wares-page .header-part {
-    padding: 30px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 30px;
+    padding-bottom: 5px;
     display: flex;
     justify-content: space-between;
     width: 100%;
@@ -13,15 +16,6 @@
 .main-panel .panel-dashboard .wares-page .header-part .select-group .custom {
     width: 100px;
 }
-/* .ng-select.custom {
-    border:0px;
-    min-height: 0px;
-    border-radius: 0;
-}
-.ng-select.custom .ng-select-container  {            
-    min-height: 0px;
-    border-radius: 0;
-} */
 .main-panel .panel-dashboard .wares-page .header-part .header-title, .main-panel .panel-dashboard .wares-page .header-part .sort-by {
     font-size: 20px;
 }
