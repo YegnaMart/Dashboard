@@ -47,7 +47,6 @@
     "font-awesome": "^4.7.0",
     "ng-circle-progress": "^1.6.0",
     "ng2-charts": "^2.4.2",
-    "ng5-slider": "^1.2.4",
     "ngx-bootstrap": "^6.1.0",
     "rxjs": "6.5.5",
     "tslib": "1.11.1",
