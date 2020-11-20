@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms'
+import { FormsModule } from '@angular/forms';
+import { NgSelectModule } from '@ng-select/ng-select';
 import {
   MatTabsModule
 } from '@angular/material/tabs';
@@ -35,6 +36,7 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { LoginComponent } from './pages/login/login.component';
 import { BidsComponent } from './pages/bids/bids.component';
 import { UsersComponent } from './pages/users/users.component';
+import { WarehouseComponent } from './pages/warehouse/warehouse.component';
 
 export const MaterialModules = [
   MatToolbarModule,
@@ -57,12 +59,14 @@ export const MaterialModules = [
     LoginComponent,
     BidsComponent,
     UsersComponent,
+    WarehouseComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NoopAnimationsModule,
     ...MaterialModules,
+    NgSelectModule,
     MdePopoverModule,
     Ng5SliderModule,
     BrowserAnimationsModule,

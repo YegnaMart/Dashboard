@@ -1,0 +1,25 @@
+<div class="main-panel">
+    <app-sidebarpart [menuItem]="3"></app-sidebarpart>
+    <div class="panel-dashboard">
+        <div class="wares-page">
+            <div class="header-part">
+                <span class="header-title">All Warehouses</span>
+                <span class="sort-by">Sort By</span>
+            </div>
+            <div class="wares-box">
+                <div class="ware-list">
+                    <div class="ware-item" *ngFor="let item of array | angularPaginator: {itemsPerPage: 6, currentPage: currentPage }; let i = index">
+                        <img src="../../../../assets/params/images/imgs/rock600x400.jpg" class="warehouse-img" />
+                        <div class="ware-item-detail">
+                            <span class="ware-item-detail-first">Suluta Warehouse</span>
+                            <span class="ware-item-detail-second">Store Capacity: 10ton</span>
+                        </div>
+                    </div>                    
+                </div>
+                <div class="pagination">
+                    <angular-paginator size="sm" (pageChange)="currentPage = $event"></angular-paginator>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

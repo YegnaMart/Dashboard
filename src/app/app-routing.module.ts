@@ -6,11 +6,13 @@ import { LoginComponent } from './pages/login/login.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { BidsComponent } from './pages/bids/bids.component';
 import { UsersComponent } from './pages/users/users.component';
+import { WarehouseComponent } from './pages/warehouse/warehouse.component';
 const routes: Routes = [
   { path: '', component: HomeComponent },  
   { path: 'login', component: LoginComponent },
   { path: 'bids', component: BidsComponent },
   { path: 'users', component: UsersComponent },
+  { path: 'ware', component: WarehouseComponent },
   { path: '**', component: NotFoundComponent }
 ];
 
