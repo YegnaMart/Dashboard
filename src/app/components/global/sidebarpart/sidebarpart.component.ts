@@ -10,8 +10,15 @@ export class SidebarpartComponent implements OnInit {
   menuActive: string = "0";
   @Input() menuItem: string; 
 
-  constructor(private authService : AuthService) { 
-    
+  public user : any;
+  public role : any;
+
+  constructor(public authService : AuthService) { 
+
+    this.user =  this.authService.getAuthUser();
+    this.role = this.authService.getAuthUserRole()
+
+    console.log(this.authService.getAuthUser())
   }
 
   ngOnInit(): void {

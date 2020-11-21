@@ -28,14 +28,13 @@ export class LoginComponent implements OnInit {
     this.httpService.login(this.user).subscribe((resp : any)=> {
 
       if(resp){
-        this.authService.setSession(resp);
-        this.router.navigate(['/'])
-      }
-      
-      console.log(this.authService.getAuthUser())
+        this.authService.setSession(resp);        
+      }else {
+        alert(resp.message)
+      }      
 
     },err => {
-      console.log(err)
+      alert("Unable to Login , please try again later")
     })
 
   }

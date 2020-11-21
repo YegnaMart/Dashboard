@@ -32,14 +32,14 @@
        <div class="profile-photo-box">
           <img class="profile-icon" src="../assets/params/images/imgs/admin-temp.png">
           <div class="admin-text-box">
-            <span class="admin-text">Admin</span>
+            <span class="admin-text" *ngIf="this.role">{{ this.role }}</span>
           </div>
        </div>
        <div class="profile-name-box">
-          <span class="profile-name">Alex Abrham</span>
+          <span class="profile-name">Yonas Alem</span>
        </div>
        <div class="logout-box">
-          <a class="logout-text" routerLink="/login">Logout</a>
+          <a class="logout-text" (click)="logout()">Logout</a>
        </div>
     </div>
   </div>

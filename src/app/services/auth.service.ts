@@ -19,14 +19,21 @@ export class AuthService {
     localStorage.setItem('auth_user',JSON.stringify({
       email : authResult.email,
       phoneNo : authResult.phoneNo,
-
+      fullName : authResult.fullName
     }))
+
+    this.router.navigate(['/'])
 
   }
 
   public getAuthUser() {
     
     return localStorage.getItem('auth_user');
+  }
+
+  public getAuthUserRole(){
+
+    return localStorage.getItem('role');
   }
 
   public isAuthenticated(): boolean {
@@ -43,9 +50,7 @@ export class AuthService {
 
       localStorage.clear();
 
-      setTimeout(()=>{
-        this.router.navigate(['/login'])
-      },2000)
+      this.router.navigate(['/login'])
       
 
   }
