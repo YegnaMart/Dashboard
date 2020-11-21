@@ -7,22 +7,10 @@
                 <span class="dashboard-sub-label">Hi Yonas Alem, welcome back!</span>
             </div>
             <div class="carousel">
-                <carousel>
-                    <div class="carousel-cell type-item">
+                <carousel >
+                    <div *ngFor="let product of availableProductList" class="carousel-cell type-item">
                         <img src="../../../../assets/params/images/imgs/item-1.png" class="item-img" />
-                    </div>
-                    <div class="carousel-cell type-item">
-                        <img src="../../../../assets/params/images/imgs/item-2.png" class="item-img" />
-                    </div>
-                    <div class="carousel-cell type-item">
-                        <img src="../../../../assets/params/images/imgs/item-1.png" class="item-img" />
-                    </div>
-                    <div class="carousel-cell type-item">
-                        <img src="../../../../assets/params/images/imgs/item-1.png" class="item-img" />
-                    </div>
-                    <div class="carousel-cell type-item">
-                        <img src="../../../../assets/params/images/imgs/item-1.png" class="item-img" />
-                    </div>
+                    </div>                    
                 </carousel>
             </div>
             <div class="datepicker-box">

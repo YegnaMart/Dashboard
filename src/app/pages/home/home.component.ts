@@ -2,6 +2,7 @@ import { Component, OnInit, Input, ViewEncapsulation, ViewChild } from '@angular
 import { ChartDataSets, ChartOptions, ChartType } from 'chart.js';
 import { Color, BaseChartDirective, Label } from 'ng2-charts';
 import * as pluginAnnotations from 'chartjs-plugin-annotation';
+import { HttpService } from 'src/app/services/http.service';
 
 @Component({
   selector: 'app-home',
@@ -77,9 +78,17 @@ export class HomeComponent implements OnInit {
     { data: [28, 48, 40, 19, 86, 27, 90], label: 'Series B' }
   ];
 
+  availableProductList = []
 
   @ViewChild(BaseChartDirective, { static: true }) chart: BaseChartDirective;
 
+  constructor(private httpService : HttpService){
+
+    this.httpService.productList().subscribe((resp:any)=> {
+
+      this.availableProductList = resp.product;
+    })
+  }
   ngOnInit(): void {}
 
   // events

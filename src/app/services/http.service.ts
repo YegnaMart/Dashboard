@@ -22,5 +22,10 @@ export class HttpService {
     return this.httpClient.get(this.url + '/warehouse/getWarehouses', {}); 
   }
 
+  public productList(){
+
+    return this.httpClient.get(this.url + '/product/get_products', {}); 
+  }
+
 }
 
