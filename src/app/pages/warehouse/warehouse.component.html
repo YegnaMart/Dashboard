@@ -11,11 +11,11 @@
             </div>
             <div class="wares-box">
                 <div class="ware-list">
-                    <div class="ware-item" *ngFor="let item of array | angularPaginator: {itemsPerPage: 6, currentPage: currentPage }; let i = index">
+                    <div class="ware-item" *ngFor="let item of warehouses | angularPaginator: {itemsPerPage: 6, currentPage: currentPage }; let i = index">
                         <img src="../../../../assets/params/images/imgs/rock600x400.jpg" class="warehouse-img" />
                         <div class="ware-item-detail">
-                            <span class="ware-item-detail-first">Suluta Warehouse</span>
-                            <span class="ware-item-detail-second">Store Capacity: 10ton</span>
+                            <span class="ware-item-detail-first">{{item.placeName}}</span>
+                            <span class="ware-item-detail-second">{{item.storage_capacity}} Quintal</span>
                         </div>
                     </div>                    
                 </div>

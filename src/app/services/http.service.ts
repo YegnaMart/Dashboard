@@ -17,5 +17,10 @@ export class HttpService {
     return this.httpClient.post(this.url + '/user/log_admin', data, {});
   }
 
+  public getWarehouses(){
+
+    return this.httpClient.get(this.url + '/warehouse/getWarehouses', {}); 
+  }
+
 }
 
