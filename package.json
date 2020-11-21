@@ -25,7 +25,7 @@
   "homepage": "https://github.com/ganatan/angular-example-routing#readme",
   "private": true,
   "dependencies": {
-    "@angular/animations": "9.1.2",
+    "@angular/animations": "^9.1.2",
     "@angular/cdk": "^9.2.1",
     "@angular/common": "9.1.2",
     "@angular/compiler": "9.1.2",
@@ -45,9 +45,12 @@
     "chart.js": "^2.9.4",
     "chartjs-plugin-annotation": "^0.5.7",
     "font-awesome": "^4.7.0",
+    "moment": "^2.29.1",
     "ng-circle-progress": "^1.6.0",
     "ng2-charts": "^2.4.2",
+    "ng5-slider": "^1.2.6",
     "ngx-bootstrap": "^6.1.0",
+    "ngx-toastr": "^13.1.0",
     "rxjs": "6.5.5",
     "tslib": "1.11.1",
     "zone.js": "0.10.3"

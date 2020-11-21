@@ -37,7 +37,13 @@ import { LoginComponent } from './pages/login/login.component';
 import { BidsComponent } from './pages/bids/bids.component';
 import { UsersComponent } from './pages/users/users.component';
 import { WarehouseComponent } from './pages/warehouse/warehouse.component';
+import { HttpService } from './services/http.service';
+import { AuthService } from './services/auth.service';
+import { GlobalService } from './services/global.service';
 
+import { HttpClientModule } from '@angular/common/http'
+import { ToastrModule } from 'ngx-toastr';
+ 
 export const MaterialModules = [
   MatToolbarModule,
   MatCardModule,
@@ -63,6 +69,7 @@ export const MaterialModules = [
   ],
   imports: [
     BrowserModule,
+    ToastrModule.forRoot(),
     AppRoutingModule,
     NoopAnimationsModule,
     ...MaterialModules,
@@ -82,9 +89,10 @@ export const MaterialModules = [
       innerStrokeWidth: 8,
       animationDuration: 300
     }),
+    HttpClientModule
   ],
   exports: [],
-  providers: [Globals],
+  providers: [Globals,HttpService,AuthService,GlobalService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

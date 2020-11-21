@@ -9,9 +9,9 @@
         <div class="mart-input-box">
             <div class="user-login-part">
                 <div class="login-item">
-                    <span class="login-item-label">Username</span>
+                    <span class="login-item-label">Phone</span>
                     <div class="login-input-box">
-                        <input type="text" class="form-control login-text" />
+                        <input type="text"  [(ngModel)]="user.phoneNo" placeholder="Enter Phone number here" class="form-control login-text" />
                     </div>
                 </div>
             </div>
@@ -19,12 +19,12 @@
                 <div class="login-item">
                     <span class="login-item-label">Password</span>
                     <div class="login-input-box">
-                        <input type="password" class="form-control login-text" />
+                        <input type="password"  [(ngModel)]="user.password" placeholder="Enter Password here" class="form-control login-text" />
                     </div>
                 </div>
             </div>
             <div class="user-login-part">
-                <a class="btn action-btn" routerLink="/">
+                <a class="btn action-btn" (click)="doLogin()">
                     <span class="action-text">Login</span>
                 </a>
             </div>
