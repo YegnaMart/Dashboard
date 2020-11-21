@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 import * as moment from 'moment';
 
 @Injectable({
@@ -6,7 +7,7 @@ import * as moment from 'moment';
 })
 export class AuthService {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   public setSession(authResult) {
     
@@ -39,10 +40,14 @@ export class AuthService {
   }
 
   public logout() {
+
+      localStorage.clear();
+
+      setTimeout(()=>{
+        this.router.navigate(['/login'])
+      },2000)
       
-      localStorage.removeItem('token')
-      localStorage.removeItem('role')
-      localStorage.removeItem('auth_user')
+
   }
 
 }
