@@ -23,10 +23,11 @@
 }
 .parent-page .right-part .mart-logo-box .logo-img {
     width: 135px;
+    margin-top: 30px;
 }
 .parent-page .user-login-part .login-item {
     width: 330px;   
-    margin-top: 50px; 
+    margin-top: 20px; 
 }
 
 .parent-page .user-login-part .login-item .login-item-label {
@@ -57,7 +58,7 @@
     background: #2DBB54;
     width: 260px;
     margin-top: 51px;
-    border-radius: 17px;
+    border-radius: 50px;
     line-height: 33px;
 }
 
@@ -77,5 +78,10 @@
 .parent-page .user-forgot-part .forgot-password {
     font-size: 15px;
     color: #2DBB54;
-    font-weight: 300;
+    font-weight: 700;
+}
+
+input.form-control::placeholder {
+    font-size: 14px;
+    font-family: "Centra No1";   
 }
