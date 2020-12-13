@@ -22,14 +22,14 @@ export class WarehouseComponent implements OnInit {
   ];
   
   public onChange(value: any) {
-    console.log("changed_value_", value);
+    // console.log("changed_value_", value);
   }
 
   ngOnInit(): void {
     this.httpService.getWarehouses().subscribe((resp:any) => {
 
       this.warehouses = resp.warehouses;
-      console.log(" >>> " , this.warehouses)
+      // console.log(" >>> " , this.warehouses)
     })
   }
 

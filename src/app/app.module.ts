@@ -43,6 +43,7 @@ import { GlobalService } from './services/global.service';
 
 import { HttpClientModule } from '@angular/common/http'
 import { ToastrModule } from 'ngx-toastr';
+import { LoadingComponent } from './components/loading/loading.component';
  
 export const MaterialModules = [
   MatToolbarModule,
@@ -66,6 +67,7 @@ export const MaterialModules = [
     BidsComponent,
     UsersComponent,
     WarehouseComponent,
+    LoadingComponent,
   ],
   imports: [
     BrowserModule,

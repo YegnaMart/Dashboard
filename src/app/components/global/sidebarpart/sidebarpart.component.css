@@ -45,7 +45,7 @@
 
   .menu_active {
       font-weight: bold;
-      color: #000000;
+      color: #2CBB54 !important;
   }
   .menu_deactive {
     font-weight: 100;
@@ -80,4 +80,8 @@
   }
   .end-part .logout-box .logout-text {
     color: #2DBB54;
+  }
+
+  .menu__title {
+    text-decoration: none;
   }

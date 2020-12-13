@@ -8,13 +8,13 @@ import { AuthService } from './auth.service';
 })
 export class HttpService {
 
-  private url = 'https://yegnamart.guzogo.com';
+  private url = 'http://172.20.10.6:5000';
   constructor(private httpClient: HttpClient, private authService: AuthService) {
     
   }
 
   public login(data) {
-    return this.httpClient.post(this.url + '/user/log_admin', data, {});
+    return this.httpClient.post(this.url + '/user/login', data, {});
   }
 
   public getWarehouses(){

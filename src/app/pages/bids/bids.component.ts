@@ -7,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BidsComponent implements OnInit {
 
+  public isLoading : Boolean = true;
   constructor() { }
 
   ngOnInit(): void {
+
+    setTimeout(()=>{
+      this.isLoading = false;
+    },500)
   }
 
 }

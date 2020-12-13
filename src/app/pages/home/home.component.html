@@ -1,16 +1,17 @@
+<app-loading  *ngIf="isLoading"></app-loading>
 <div class="main-panel">
     <app-sidebarpart [menuItem]="1"></app-sidebarpart>
-    <div class="panel-dashboard">        
+    <div class="panel-dashboard">
         <div class="dashboard-box">
             <div class="dashboard-label-box">
                 <span class="dashboard-label">Dashboard</span>
                 <span class="dashboard-sub-label">Hi Yonas Alem, welcome back!</span>
             </div>
             <div class="carousel">
-                <carousel >
+                <carousel>
                     <div *ngFor="let product of availableProductList" class="carousel-cell type-item">
                         <img src="../../../../assets/params/images/imgs/item-1.png" class="item-img" />
-                    </div>                    
+                    </div>
                 </carousel>
             </div>
             <div class="datepicker-box">
@@ -25,36 +26,40 @@
                 <div class="graph-box">
                     <div class="graph-group">
                         <div style="display: block;">
-                            <canvas baseChart width="400" height="300" [datasets]="lineChartData" [labels]="lineChartLabels"
-                                [options]="lineChartOptions" [colors]="lineChartColors" [legend]="lineChartLegend" [chartType]="lineChartType"
-                                [plugins]="lineChartPlugins" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"></canvas>
+                            <canvas baseChart width="400" height="300" [datasets]="lineChartData"
+                                [labels]="lineChartLabels" [options]="lineChartOptions" [colors]="lineChartColors"
+                                [legend]="lineChartLegend" [chartType]="lineChartType" [plugins]="lineChartPlugins"
+                                (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"></canvas>
                         </div>
                         <div class="sales-items">
-                           <div class="sales-item-icon sales-item-icon-red"></div> 
-                           <div class="sales-item-detail">
-                               <span class="item-first">Mobile</span>
-                               <span class="item-second">63%</span>
-                           </div>
-                           <div class="sales-item-icon sales-item-icon-blue"></div>
-                           <div class="sales-item-detail">
+                            <div class="sales-item-icon sales-item-icon-red"></div>
+                            <div class="sales-item-detail">
+                                <span class="item-first">Mobile</span>
+                                <span class="item-second">63%</span>
+                            </div>
+                            <div class="sales-item-icon sales-item-icon-blue"></div>
+                            <div class="sales-item-detail">
                                 <span class="item-first">Desktop</span>
                                 <span class="item-second">37%</span>
-                           </div>
+                            </div>
                         </div>
                     </div>
                     <div class="progress-bar-box">
-                        <circle-progress [percent]="63" [radius]="100" [outerStrokeWidth]="16" [innerStrokeWidth]="1" outerStrokeColor="#e65c46" [outerStrokeGradient]="true" [unitsFontSize]='28'
-                         [outerStrokeWidth]='20' [titleFontSize]='28'   [animation]="true" [animationDuration]="300" subtitle="Mobiles">
+                        <circle-progress [percent]="63" [radius]="100" [outerStrokeWidth]="16" [innerStrokeWidth]="1"
+                            outerStrokeColor="#e65c46" [outerStrokeGradient]="true" [unitsFontSize]='28'
+                            [outerStrokeWidth]='20' [titleFontSize]='28' [animation]="true" [animationDuration]="300"
+                            subtitle="Mobiles">
                         </circle-progress>
                     </div>
                 </div>
                 <div class="warehourse-label-box">
-                    <span class="warehouse-text">Warehouse Locations</span>              
+                    <span class="warehouse-text">Warehouse Locations</span>
                 </div>
                 <div class="graph-box">
                     <div style="display: block;">
-                        <canvas baseChart width="300" height="250" class="canvas-size" [datasets]="barChartData" [labels]="barChartLabels" [options]="barChartOptions"
-                            [plugins]="barChartPlugins" [legend]="barChartLegend" [chartType]="barChartType">
+                        <canvas baseChart width="300" height="250" class="canvas-size" [datasets]="barChartData"
+                            [labels]="barChartLabels" [options]="barChartOptions" [plugins]="barChartPlugins"
+                            [legend]="barChartLegend" [chartType]="barChartType">
                         </canvas>
                     </div>
                     <div class="world-map-box">
@@ -64,5 +69,5 @@
 
             </div>
         </div>
-    </div>    
+    </div>
 </div>

@@ -81,22 +81,26 @@ export class HomeComponent implements OnInit {
   availableProductList = []
 
   @ViewChild(BaseChartDirective, { static: true }) chart: BaseChartDirective;
-
+  public isLoading : Boolean = true;
   constructor(private httpService : HttpService){
 
     this.httpService.productList().subscribe((resp:any)=> {
-
+      
       this.availableProductList = resp.product;
+      
+      setTimeout(()=>{
+        this.isLoading = false;
+      },3000)
     })
   }
   ngOnInit(): void {}
 
   // events
   public chartClicked({ event, active }: { event: MouseEvent, active: {}[] }): void {
-    console.log(event, active);
+    // console.log(event, active);
   }
 
   public chartHovered({ event, active }: { event: MouseEvent, active: {}[] }): void {
-    console.log(event, active);
+    // console.log(event, active);
   }
 }
