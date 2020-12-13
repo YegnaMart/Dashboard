@@ -3,6 +3,7 @@
     <app-sidebarpart [menuItem]="2"></app-sidebarpart>
     <div class="panel-dashboard">
         <div class="left-part">
+            <p class="post-bid-btn" (click)="postbid()">Post Bids</p>
             <mat-tab-group>
                 <mat-tab>
                     <ng-template mat-tab-label>
@@ -222,6 +223,7 @@
                     </div>
                 </mat-tab>
             </mat-tab-group>
+            
         </div>
         <div class="right-part">
             <div class="warehouse-image-box">

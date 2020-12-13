@@ -129,3 +129,13 @@
     width: 50%;
 }
 
+.post-bid-btn {
+    float: right;
+    background: #2CBB54;
+    color: white;
+    width: 150px;
+    text-align: center;
+    height: 35px;
+    border-radius: 20px;
+    padding-top: 7px;
+}

@@ -18,7 +18,7 @@ export class SidebarpartComponent implements OnInit {
     this.user =  this.authService.getAuthUser();
     this.role = this.authService.getAuthUserRole()
 
-    // console.log(this.authService.getAuthUser())
+    console.log("this . " , this.user)
   }
 
   ngOnInit(): void {

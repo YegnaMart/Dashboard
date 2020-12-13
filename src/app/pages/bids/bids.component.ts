@@ -17,4 +17,10 @@ export class BidsComponent implements OnInit {
     },500)
   }
 
+  postbid(){
+
+    
+
+  }
+
 }

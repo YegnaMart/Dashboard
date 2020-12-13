@@ -16,11 +16,7 @@ export class AuthService {
     localStorage.setItem('token', authResult.token);
     // localStorage.setItem('expiresIn', expiresAt);
     localStorage.setItem('role', authResult.role);
-    localStorage.setItem('auth_user',JSON.stringify({
-      email : authResult.email,
-      phoneNo : authResult.phoneNo,
-      fullName : authResult.fullName
-    }))
+    localStorage.setItem('auth_user',authResult.fullName)
 
     this.router.navigate(['/'])
 

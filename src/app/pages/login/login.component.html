@@ -8,10 +8,10 @@
         </div>
         <div class="mart-input-box">
             <div class="user-login-part">
-                <div class="login-item">
+                <div class="login-item" >
                     <span class="login-item-label">Phone</span>
                     <div class="login-input-box">
-                        <input type="text"  [(ngModel)]="user.phoneNo" placeholder="Enter Phone number here" class="form-control login-text" />
+                        <input type="text"  [(ngModel)]="user.phoneNo"  class="form-control login-text" />
                     </div>
                 </div>
             </div>
@@ -19,7 +19,7 @@
                 <div class="login-item">
                     <span class="login-item-label">Password</span>
                     <div class="login-input-box">
-                        <input type="password"  [(ngModel)]="user.password" placeholder="Enter Password here" class="form-control login-text" />
+                        <input type="password"  [(ngModel)]="user.password" class="form-control login-text" />
                     </div>
                 </div>
             </div>
@@ -30,6 +30,9 @@
             </div>
             <div class="user-forgot-part">
                 <a class="forgot-password">Forgot Password?</a>
+            </div>
+            <div class="user-register-part" (click)="proceedToRegistration()">
+                <a class="register-now" >New to YegnaMart ? <span style="font-weight: bolder;font-size: 18px;">Register Now ?</span> </a>
             </div>
         </div>
     </div>

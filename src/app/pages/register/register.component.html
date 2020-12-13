@@ -1,0 +1,57 @@
+<app-loading  *ngIf="!isLoading"></app-loading>
+<div class="parent-page">
+    <div class="left-part">
+        <img src="../../../../assets/params/images/imgs/login-img.png" class="label-img" />
+    </div>
+    <div class="right-part">
+        <div class="mart-logo-box">
+            <img src="../../../../assets/params/images/logo/mart-logo.png" class="logo-img" />
+        </div>
+        <div class="mart-input-box">
+            <div class="user-login-part">
+                <div class="login-item">
+                    <span class="login-item-label">Full Name</span>
+                    <div class="login-input-box">
+                        <input type="text"  [(ngModel)]="user.fullName"  class="form-control login-text" />
+                    </div>
+                </div>
+            </div>
+            <div class="user-login-part">
+                <div class="login-item">
+                    <span class="login-item-label">Password</span>
+                    <div class="login-input-box">
+                        <input type="password"  [(ngModel)]="user.password"  class="form-control login-text" />
+                    </div>
+                </div>
+            </div>
+            <div class="user-login-part">
+                <div class="login-item">
+                    <span class="login-item-label">Phone / Email</span>
+                    <div class="login-input-box">
+                        <input type="text"  [(ngModel)]="user.phoneNo"  class="form-control login-text" />
+                    </div>
+                </div>
+            </div>
+            <div class="user-login-part">
+                <div class="login-item">
+                    <span class="login-item-label">Role</span>
+                    <div class="login-input-box">
+                        <select 
+                            class="form-control"
+                            [(ngModel)]="user.role">
+                            <option *ngFor="let role of roles" [value]="role">{{ role }}</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="user-login-part">
+                <a class="btn action-btn" (click)="doRegisteration()">
+                    <span class="action-text">Register Now !</span>
+                </a>
+            </div>
+            <div class="user-register-part" (click)="proceedToLogin()">
+                <a class="register-now">Already have an account ? <span style="font-weight: bolder;font-size: 18px;">Login</span> </a>
+            </div>
+        </div>
+    </div>
+</div>
