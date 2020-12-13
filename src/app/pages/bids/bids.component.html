@@ -4,76 +4,31 @@
     <div class="panel-dashboard">
         <div class="left-part">
             <p class="post-bid-btn" (click)="postbid()">Post Bids</p>
-            <mat-tab-group>
+            <mat-tab-group #tabGroup (selectedTabChange)="tabChanged($event)">
                 <mat-tab>
                     <ng-template mat-tab-label>
                         All Bids
                     </ng-template>
-                    <div class="bids-list">
-                        <div class="bid-item-box">
+                    <div class="bids-list" *ngFor="let avaiableBid of availableAllBids">
+                        <div class="bid-item-box" (click)="showPreview(avaiableBid)">
                             <div class="item-first-box">
                                 <div class="item-image-box">
-                                    <img src="../../../../assets/params/images/imgs/item-1.png" class="list-image-item" />
+                                    <img *ngIf="avaiableBid.product && avaiableBid.product.productImage" src="{{getImage(avaiableBid.product.productImage)}}" class="list-image-item" />
                                 </div>
                                 <div class="item-detail-box">
-                                    <span class="item-detail-label">Wheat Type II</span>
-                                    <span class="item-detail-sub-label">Warehouse | Suluta</span>
-                                    <span class="item-detail-last">Aution: Not started</span>
+                                    <span class="item-detail-label" *ngIf="avaiableBid.product && avaiableBid.product.productName">{{avaiableBid.product.productName}}</span>
+                                    <span class="item-detail-sub-label" *ngIf="avaiableBid.postedBy && avaiableBid.postedBy.placeName">Warehouse | {{avaiableBid.postedBy.placeName}}</span>
+                                    <span class="item-detail-last">Auction: Not started</span>
+                                    <span class="item-detail-last" *ngIf="avaiableBid.product && avaiableBid.product.category">Category: {{avaiableBid.product.category}}</span>
                                 </div>
                             </div>
                             <div class="item-last-box">
                                 <img src="../../../../assets/params/icons/icon-love.png" class="icon-love" />
-                                <span class="price-item">ETB 1,450</span>
+                                <span class="item-detail-last" *ngIf="avaiableBid.bidNo">#{{avaiableBid.bidNo}}</span>
+                                <span class="price-item" *ngIf="avaiableBid.product && avaiableBid.product.price"></span>
+                                <span class="price-item" *ngIf="avaiableBid.initialBiddingPrice ">Initial Bid Price : {{ formatCurrency(avaiableBid.initialBiddingPrice) }}</span>
                             </div>
-                        </div>
-                        <div class="bid-item-box">
-                            <div class="item-first-box">
-                                <div class="item-image-box">
-                                    <img src="../../../../assets/params/images/imgs/item-1.png" class="list-image-item" />
-                                </div>
-                                <div class="item-detail-box">
-                                    <span class="item-detail-label">Wheat Type II</span>
-                                    <span class="item-detail-sub-label">Warehouse | Suluta</span>
-                                    <span class="item-detail-last">Aution: Not started</span>
-                                </div>
-                            </div>
-                            <div class="item-last-box">
-                                <img src="../../../../assets/params/icons/icon-love.png" class="icon-love" />
-                                <span class="price-item">ETB 1,450</span>
-                            </div>
-                        </div>
-                        <div class="bid-item-box">
-                            <div class="item-first-box">
-                                <div class="item-image-box">
-                                    <img src="../../../../assets/params/images/imgs/item-1.png" class="list-image-item" />
-                                </div>
-                                <div class="item-detail-box">
-                                    <span class="item-detail-label">Wheat Type II</span>
-                                    <span class="item-detail-sub-label">Warehouse | Suluta</span>
-                                    <span class="item-detail-last">Aution: Not started</span>
-                                </div>
-                            </div>
-                            <div class="item-last-box">
-                                <img src="../../../../assets/params/icons/icon-love.png" class="icon-love" />
-                                <span class="price-item">ETB 1,450</span>
-                            </div>
-                        </div>
-                        <div class="bid-item-box">
-                            <div class="item-first-box">
-                                <div class="item-image-box">
-                                    <img src="../../../../assets/params/images/imgs/item-1.png" class="list-image-item" />
-                                </div>
-                                <div class="item-detail-box">
-                                    <span class="item-detail-label">Wheat Type II</span>
-                                    <span class="item-detail-sub-label">Warehouse | Suluta</span>
-                                    <span class="item-detail-last">Aution: Not started</span>
-                                </div>
-                            </div>
-                            <div class="item-last-box">
-                                <img src="../../../../assets/params/icons/icon-love.png" class="icon-love" />
-                                <span class="price-item">ETB 1,450</span>
-                            </div>
-                        </div>                        
+                        </div>                                                
                     </div>
                 </mat-tab>
             
@@ -81,72 +36,26 @@
                     <ng-template mat-tab-label>
                         Ongoing
                     </ng-template>
-                    <div class="bids-list">
-                        <div class="bid-item-box">
+                    <div class="bids-list" *ngFor="let avaiableBid of availableBids">
+                        <div class="bid-item-box" (click)="showPreview(avaiableBid)">
                             <div class="item-first-box">
                                 <div class="item-image-box">
-                                    <img src="../../../../assets/params/images/imgs/item-2.png" class="list-image-item" />
+                                    <img *ngIf="avaiableBid.product && avaiableBid.product.productImage" src="{{getImage(avaiableBid.product.productImage)}}" class="list-image-item" />
                                 </div>
                                 <div class="item-detail-box">
-                                    <span class="item-detail-label">Wheat Type II</span>
-                                    <span class="item-detail-sub-label">Warehouse | Suluta</span>
-                                    <span class="item-detail-last">Aution: Not started</span>
+                                    <span class="item-detail-label" *ngIf="avaiableBid.product && avaiableBid.product.productName">{{avaiableBid.product.productName}}</span>
+                                    <span class="item-detail-sub-label" *ngIf="avaiableBid.postedBy && avaiableBid.postedBy.placeName">Warehouse | {{avaiableBid.postedBy.placeName}}</span>
+                                    <span class="item-detail-last">Auction: Not started</span>
+                                    <span class="item-detail-last" *ngIf="avaiableBid.product && avaiableBid.product.category">Category: {{avaiableBid.product.category}}</span>
                                 </div>
                             </div>
                             <div class="item-last-box">
                                 <img src="../../../../assets/params/icons/icon-love.png" class="icon-love" />
-                                <span class="price-item">ETB 1,450</span>
+                                <span class="item-detail-last" *ngIf="avaiableBid.bidNo">#{{avaiableBid.bidNo}}</span>
+                                <span class="price-item" *ngIf="avaiableBid.product && avaiableBid.product.price"></span>
+                                <span class="price-item" *ngIf="avaiableBid.initialBiddingPrice ">Initial Bid Price : {{ formatCurrency(avaiableBid.initialBiddingPrice) }}</span>
                             </div>
-                        </div>
-                        <div class="bid-item-box">
-                            <div class="item-first-box">
-                                <div class="item-image-box">
-                                    <img src="../../../../assets/params/images/imgs/item-2.png" class="list-image-item" />
-                                </div>
-                                <div class="item-detail-box">
-                                    <span class="item-detail-label">Wheat Type II</span>
-                                    <span class="item-detail-sub-label">Warehouse | Suluta</span>
-                                    <span class="item-detail-last">Aution: Not started</span>
-                                </div>
-                            </div>
-                            <div class="item-last-box">
-                                <img src="../../../../assets/params/icons/icon-love.png" class="icon-love" />
-                                <span class="price-item">ETB 1,450</span>
-                            </div>
-                        </div>
-                        <div class="bid-item-box">
-                            <div class="item-first-box">
-                                <div class="item-image-box">
-                                    <img src="../../../../assets/params/images/imgs/item-2.png" class="list-image-item" />
-                                </div>
-                                <div class="item-detail-box">
-                                    <span class="item-detail-label">Wheat Type II</span>
-                                    <span class="item-detail-sub-label">Warehouse | Suluta</span>
-                                    <span class="item-detail-last">Aution: Not started</span>
-                                </div>
-                            </div>
-                            <div class="item-last-box">
-                                <img src="../../../../assets/params/icons/icon-love.png" class="icon-love" />
-                                <span class="price-item">ETB 1,450</span>
-                            </div>
-                        </div>
-                        <div class="bid-item-box">
-                            <div class="item-first-box">
-                                <div class="item-image-box">
-                                    <img src="../../../../assets/params/images/imgs/item-2.png" class="list-image-item" />
-                                </div>
-                                <div class="item-detail-box">
-                                    <span class="item-detail-label">Wheat Type II</span>
-                                    <span class="item-detail-sub-label">Warehouse | Suluta</span>
-                                    <span class="item-detail-last">Aution: Not started</span>
-                                </div>
-                            </div>
-                            <div class="item-last-box">
-                                <img src="../../../../assets/params/icons/icon-love.png" class="icon-love" />
-                                <span class="price-item">ETB 1,450</span>
-                            </div>
-                        </div>
-                    
+                        </div>                                                
                     </div>
                 </mat-tab>
             
@@ -155,103 +64,93 @@
                         Closed
                     </ng-template>
             
-                    <div class="bids-list">
-                        <div class="bid-item-box">
+                    <div class="bids-list" *ngFor="let avaiableBid of availabledClosedBids">
+                        <div class="bid-item-box" (click)="showPreview(avaiableBid)">
                             <div class="item-first-box">
                                 <div class="item-image-box">
-                                    <img src="../../../../assets/params/images/imgs/item-1.png" class="list-image-item" />
+                                    <img *ngIf="avaiableBid.product && avaiableBid.product.productImage" src="{{getImage(avaiableBid.product.productImage)}}" class="list-image-item" />
                                 </div>
                                 <div class="item-detail-box">
-                                    <span class="item-detail-label">Wheat Type II</span>
-                                    <span class="item-detail-sub-label">Warehouse | Suluta</span>
-                                    <span class="item-detail-last">Aution: Not started</span>
+                                    <span class="item-detail-label" *ngIf="avaiableBid.product && avaiableBid.product.productName">{{avaiableBid.product.productName}}</span>
+                                    <span class="item-detail-sub-label" *ngIf="avaiableBid.postedBy && avaiableBid.postedBy.placeName">Warehouse | {{avaiableBid.postedBy.placeName}}</span>
+                                    <span class="item-detail-last">Auction: Not started</span>
+                                    <span class="item-detail-last" *ngIf="avaiableBid.product && avaiableBid.product.category">Category: {{avaiableBid.product.category}}</span>
                                 </div>
                             </div>
                             <div class="item-last-box">
                                 <img src="../../../../assets/params/icons/icon-love.png" class="icon-love" />
-                                <span class="price-item">ETB 1,450</span>
+                                <span class="item-detail-last" *ngIf="avaiableBid.bidNo">#{{avaiableBid.bidNo}}</span>
+                                <span class="price-item" *ngIf="avaiableBid.product && avaiableBid.product.price"></span>
+                                <span class="price-item" *ngIf="avaiableBid.initialBiddingPrice ">Initial Bid Price : {{ formatCurrency(avaiableBid.initialBiddingPrice) }}</span>
                             </div>
-                        </div>
-                        <div class="bid-item-box">
-                            <div class="item-first-box">
-                                <div class="item-image-box">
-                                    <img src="../../../../assets/params/images/imgs/item-1.png" class="list-image-item" />
-                                </div>
-                                <div class="item-detail-box">
-                                    <span class="item-detail-label">Wheat Type II</span>
-                                    <span class="item-detail-sub-label">Warehouse | Suluta</span>
-                                    <span class="item-detail-last">Aution: Not started</span>
-                                </div>
-                            </div>
-                            <div class="item-last-box">
-                                <img src="../../../../assets/params/icons/icon-love.png" class="icon-love" />
-                                <span class="price-item">ETB 1,450</span>
-                            </div>
-                        </div>
-                        <div class="bid-item-box">
-                            <div class="item-first-box">
-                                <div class="item-image-box">
-                                    <img src="../../../../assets/params/images/imgs/item-1.png" class="list-image-item" />
-                                </div>
-                                <div class="item-detail-box">
-                                    <span class="item-detail-label">Wheat Type II</span>
-                                    <span class="item-detail-sub-label">Warehouse | Suluta</span>
-                                    <span class="item-detail-last">Aution: Not started</span>
-                                </div>
-                            </div>
-                            <div class="item-last-box">
-                                <img src="../../../../assets/params/icons/icon-love.png" class="icon-love" />
-                                <span class="price-item">ETB 1,450</span>
-                            </div>
-                        </div>
-                        <div class="bid-item-box">
-                            <div class="item-first-box">
-                                <div class="item-image-box">
-                                    <img src="../../../../assets/params/images/imgs/item-1.png" class="list-image-item" />
-                                </div>
-                                <div class="item-detail-box">
-                                    <span class="item-detail-label">Wheat Type II</span>
-                                    <span class="item-detail-sub-label">Warehouse | Suluta</span>
-                                    <span class="item-detail-last">Aution: Not started</span>
-                                </div>
-                            </div>
-                            <div class="item-last-box">
-                                <img src="../../../../assets/params/icons/icon-love.png" class="icon-love" />
-                                <span class="price-item">ETB 1,450</span>
-                            </div>
-                        </div>
+                        </div>                                                
                     </div>
                 </mat-tab>
+
+                <mat-tab>
+                    <ng-template mat-tab-label>
+                        Scheduled
+                    </ng-template>
+            
+                    <div class="bids-list" *ngFor="let avaiableBid of availabledScheduledBids">
+                        <div class="bid-item-box" (click)="showPreview(avaiableBid)">
+                            <div class="item-first-box">
+                                <div class="item-image-box">
+                                    <img *ngIf="avaiableBid.product && avaiableBid.product.productImage" src="{{getImage(avaiableBid.product.productImage)}}" class="list-image-item" />
+                                </div>
+                                <div class="item-detail-box">
+                                    <span class="item-detail-label" *ngIf="avaiableBid.product && avaiableBid.product.productName">{{avaiableBid.product.productName}}</span>
+                                    <span class="item-detail-sub-label" *ngIf="avaiableBid.postedBy && avaiableBid.postedBy.placeName">Warehouse | {{avaiableBid.postedBy.placeName}}</span>
+                                    <span class="item-detail-last">Auction: Not started</span>
+                                    <span class="item-detail-last" *ngIf="avaiableBid.product && avaiableBid.product.category">Category: {{avaiableBid.product.category}}</span>
+                                </div>
+                            </div>
+                            <div class="item-last-box">
+                                <img src="../../../../assets/params/icons/icon-love.png" class="icon-love" />
+                                <span class="item-detail-last" *ngIf="avaiableBid.bidNo">#{{avaiableBid.bidNo}}</span>
+                                <span class="price-item" *ngIf="avaiableBid.product && avaiableBid.product.price"></span>
+                                <span class="price-item" *ngIf="avaiableBid.initialBiddingPrice ">Initial Bid Price : {{ formatCurrency(avaiableBid.initialBiddingPrice) }}</span>
+                            </div>
+                        </div>                                                
+                    </div>
+                </mat-tab>
+
             </mat-tab-group>
             
         </div>
-        <div class="right-part">
+        <div class="right-part" *ngIf="activeBid">
             <div class="warehouse-image-box">
-                <img src="../../../../assets/params/images/imgs/demo-image-1.png" class="warehouse-img" />
+                <img src="{{getImage(activeBid['product'].productImage)}}" class="warehouse-img" />                
             </div>
             <div class="warehouse-suluta">
                 <span class="warehouse-span-1">Warehouse</span>
-                <span class="warehouse-span-2">| Sululta</span>
+                <span class="warehouse-span-2">| {{activeBid['postedBy'].placeName}}</span>
             </div>
-            <div class="starting-price-box">
+            <div class="starting-price-box" *ngIf="activeBid['biddingFee']">
                 <div class="price-box-item">
-                    <span class="starting-text">Starting Price</span>
-                    <span class="starting-price">ETB1,345</span>
+                    <span class="starting-text">Bidding Fee</span>
+                    <span class="starting-price">{{ formatCurrency(activeBid['biddingFee']) }}</span>
                 </div>
             </div>
+            <br/>
+            <div class="starting-price-box" *ngIf="activeBid['initialBiddingPrice']">
+                <div class="price-box-item">
+                    <span class="starting-text">Starting Bid Price</span>
+                    <span class="starting-price">{{ formatCurrency(activeBid['initialBiddingPrice']) }}</span>
+                </div>
+            </div>
+            <div class="warehouse-suluta" >
+                <span class="warehouse-span-1" style="font-size: 20px;">Quantity</span>
+                <span class="warehouse-span-2" style="font-size: 20px;">- {{activeBid['product'].quantity}} Quintal</span>
+            </div>
             <div class="photos-header-box">
-                <span class="photos-header-label">Photos(By Farmer)</span>
+                <span class="photos-header-label">Bidders ( {{activeBid['bidders'].length}} )</span>
                 <img src="../../../../assets/params/icons/icon-view-more.png" class="view-more" />
             </div>
-            <div class="photos-list">
-                <img src="../../../../assets/params/images/imgs/demo-image-2.png" class="photo-item" />
-                <img src="../../../../assets/params/images/imgs/demo-image-2.png" class="photo-item" />
-                <img src="../../../../assets/params/images/imgs/demo-image-2.png" class="photo-item" />
-                <img src="../../../../assets/params/images/imgs/demo-image-2.png" class="photo-item" />
-                <img src="../../../../assets/params/images/imgs/demo-image-2.png" class="photo-item" />
-                <img src="../../../../assets/params/images/imgs/demo-image-2.png" class="photo-item" />
-                <img src="../../../../assets/params/images/imgs/demo-image-2.png" class="photo-item" />
-                <img src="../../../../assets/params/images/imgs/demo-image-2.png" class="photo-item" />
+            <div class="bidders-list" *ngIf="activeBid['bidders'].length > 0">
+                <div *ngFor="let bid of activeBid['bidders'];let idx = index">
+                    <p>{{idx + 1}} -  {{ bid.bidder.fullName }} <span style="padding-left: 20px;color : #2DBB54;font-weight: 500;">{{ formatCurrency(bid.offer) }}</span></p>
+                </div>               
             </div>
         </div>
     </div>

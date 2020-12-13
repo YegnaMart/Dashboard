@@ -45,6 +45,7 @@
     color: #707070;
     font-size: 15px;
     margin-top: 30px;
+    text-transform: capitalize;
 }
 .bids-list .bid-item-box .item-last-box {
     min-height: 100%;
@@ -138,4 +139,8 @@
     height: 35px;
     border-radius: 20px;
     padding-top: 7px;
+}
+
+.bidders-list {
+    padding-left: 10px;
 }
