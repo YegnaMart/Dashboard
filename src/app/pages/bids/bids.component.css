@@ -139,8 +139,20 @@
     height: 35px;
     border-radius: 20px;
     padding-top: 7px;
+    cursor: pointer;
 }
 
 .bidders-list {
     padding-left: 10px;
+}
+
+.list-image-item {
+    width: 150px;
+    height: 150px;
+    border-radius: 20px;
+}
+
+img.warehouse-img {
+    height: 300px !important;
+    border-radius: 30px !important;
 }

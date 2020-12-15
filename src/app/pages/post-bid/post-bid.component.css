@@ -1,0 +1,18 @@
+.header-title {
+    padding-left:  50px;
+}
+
+.header-part {
+    margin-top : 50px;
+}
+
+.wares-page {
+    width: 100%;
+}
+
+.post-bid-btn {
+    background: #2DBB54;
+    border: none;
+    border-radius: 32px;
+    margin-left: 20px;
+}

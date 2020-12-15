@@ -32,6 +32,7 @@ export class LoginComponent implements OnInit {
       if(resp){
         this.toastr.success ( resp.message , ' YegnaMart');
         setTimeout(() => {
+          
           this.authService.setSession(resp.data);        
         },1500)        
       }else {

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatTabChangeEvent } from '@angular/material/tabs/tab-group';
+import { Router } from '@angular/router';
 import { HttpService } from 'src/app/services/http.service';
 
 @Component({
@@ -17,25 +18,25 @@ export class BidsComponent implements OnInit {
 
   public activeBid = false;
 
-  constructor(private httpService : HttpService){
+  constructor(private httpService : HttpService,private router : Router){
     
     this.httpService.getBids().subscribe((resp:any)=> {
 
-      this.availableBids = resp.filter(_bid => {
+      this.availableBids = resp.data.filter(_bid => {
         if(_bid.status === "inactive"){
           return true
         }
         return false
       })
 
-      this.availabledClosedBids = resp.filter(_bid => {
+      this.availabledClosedBids = resp.data.filter(_bid => {
         if(_bid.status === "closed"){
           return true
         }
         return false
       })
 
-      this.availabledScheduledBids = resp.filter(_bid => {
+      this.availabledScheduledBids = resp.data.filter(_bid => {
         if(_bid.status === "scheduled"){
           return true
         }
@@ -74,7 +75,7 @@ export class BidsComponent implements OnInit {
   postbid(){
 
     //bidNo , biddingFee , product (list of product ... product id ..>>> ) , initialBiddingPrice , startingDate , closingDate , postedBy , postedBy ( warehouse object id)
-
+    this.router.navigate(['/post-bid'])
   }
 
   getImage(imagePath){

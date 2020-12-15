@@ -34,6 +34,14 @@ export class HttpService {
     return this.httpClient.get(this.url + '/warehouse/getWarehouses', {}); 
   }
 
+  public postProduct(data,headers) {
+    return this.httpClient.post(this.url + '/product/post_product', data, {headers:headers});
+  }
+
+  public postBid(data,headers) {
+    return this.httpClient.post(this.url + '/bid/create_bid', data, {headers:headers});
+  }
+
   public productList(){
 
     return this.httpClient.get(this.url + '/product/get_products', {}); 
