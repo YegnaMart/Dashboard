@@ -23,7 +23,7 @@ export class BidsComponent implements OnInit {
     this.httpService.getBids().subscribe((resp:any)=> {
 
       this.availableBids = resp.data.filter(_bid => {
-        if(_bid.status === "inactive"){
+        if(_bid.status === "opened"){
           return true
         }
         return false

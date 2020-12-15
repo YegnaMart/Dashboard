@@ -16,6 +16,8 @@ export class DeliveryComponent implements OnInit {
   postedBy : any;
   deliveries : any;
 
+  public isLoading : Boolean = true;
+
   constructor(private httpService : HttpService) { }
 
   ngOnInit(): void {
@@ -29,6 +31,9 @@ export class DeliveryComponent implements OnInit {
     this.httpService.getDeliveries(header).subscribe((_delivery:any) => {
 
       this.deliveries = _delivery.data;
+      setTimeout(()=>{
+        this.isLoading = false;
+      },3000);
       console.log(this.deliveries)
     },err => {
       

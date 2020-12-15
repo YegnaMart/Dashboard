@@ -54,8 +54,6 @@ export class PostBidComponent implements OnInit {
     }
 
 
-    console.log("user", this.postedBy, this.role)
-
     var header = {
       'Content-Type': 'application/json',
       'Authorization': this.postedBy.token

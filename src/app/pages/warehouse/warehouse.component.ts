@@ -21,6 +21,8 @@ export class WarehouseComponent implements OnInit {
     "../../../assets/params/images/imgs/warehouses/3.png"
   ]
 
+  public isLoading : Boolean = true;
+
   getImage(index){
     return this.warehouseImages[index % 3]
   }
@@ -39,6 +41,9 @@ export class WarehouseComponent implements OnInit {
     this.httpService.getWarehouses().subscribe((resp:any) => {
 
       this.warehouses = resp.warehouses;
+      setTimeout(()=>{
+        this.isLoading = false;
+      },3000);
     })
   }
 
