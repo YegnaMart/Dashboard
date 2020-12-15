@@ -71,3 +71,9 @@
     min-height: 0px;
     border-radius: 0;
 }
+
+.ware-item-detail-third {
+    margin-left : 70%;
+    font-size: 13px;
+    color: #2DBB54 !important;
+}

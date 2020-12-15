@@ -15,6 +15,16 @@ export class WarehouseComponent implements OnInit {
   selectedSort: number;
   warehouses = [];
 
+  warehouseImages = [
+    "../../../assets/params/images/imgs/warehouses/1.png",
+    "../../../assets/params/images/imgs/warehouses/2.png",
+    "../../../assets/params/images/imgs/warehouses/3.png"
+  ]
+
+  getImage(index){
+    return this.warehouseImages[index % 3]
+  }
+
   sorts = [
       { id: 1, name: 'Random' },
       { id: 2, name: 'Up' },
@@ -29,7 +39,7 @@ export class WarehouseComponent implements OnInit {
     this.httpService.getWarehouses().subscribe((resp:any) => {
 
       this.warehouses = resp.warehouses;
-      // console.log(" >>> " , this.warehouses)
+      console.log(" >>> " , this.warehouses)
     })
   }
 
