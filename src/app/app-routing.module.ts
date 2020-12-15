@@ -10,12 +10,14 @@ import { WarehouseComponent } from './pages/warehouse/warehouse.component';
 import { AuthguardService as AuthGuard} from './services/authguard.service';
 import { RegisterComponent } from './pages/register/register.component';
 import { PostBidComponent } from './pages/post-bid/post-bid.component';
+import { DeliveryComponent } from './pages/delivery/delivery.component';
 const routes: Routes = [
   { path: '', component: HomeComponent,canActivate : [AuthGuard]  },  
   { path: 'login', component: LoginComponent },
   { path : 'signup', component : RegisterComponent},
   { path: 'bids', component: BidsComponent,canActivate : [AuthGuard]  },
   { path : 'post-bid',component : PostBidComponent, canActivate: [AuthGuard]},
+  { path : 'delivery' , component : DeliveryComponent, canActivate : [AuthGuard]},
   { path: 'users', component: UsersComponent,canActivate : [AuthGuard]  },
   { path: 'warehouse', component: WarehouseComponent,canActivate : [AuthGuard]  },
   { path: '**', component: NotFoundComponent,canActivate : [AuthGuard]  }

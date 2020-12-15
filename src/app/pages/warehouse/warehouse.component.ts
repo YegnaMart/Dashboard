@@ -39,7 +39,6 @@ export class WarehouseComponent implements OnInit {
     this.httpService.getWarehouses().subscribe((resp:any) => {
 
       this.warehouses = resp.warehouses;
-      console.log(" >>> " , this.warehouses)
     })
   }
 

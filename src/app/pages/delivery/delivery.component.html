@@ -1,0 +1,22 @@
+<div class="main-panel">
+    <app-sidebarpart [menuItem]="3"></app-sidebarpart>
+    <div class="panel-dashboard">
+        <div class="wares-page">
+            <div class="header-part">
+                <span class="header-title">All Delivery </span>
+                <div class="select-group">                    
+                </div>
+            </div>
+            <div class="wares-box">
+                <div class="ware-list">
+                    <div class="ware-item" *ngFor="let item of array | angularPaginator: {itemsPerPage: 6, currentPage: currentPage }; let i = index">
+                        <img src="{{getImage(i)}}" class="warehouse-img" />                        
+                    </div>                    
+                </div>
+                <div class="pagination">
+                    <angular-paginator size="sm" (pageChange)="currentPage = $event"></angular-paginator>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

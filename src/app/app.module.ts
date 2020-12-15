@@ -46,6 +46,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { LoadingComponent } from './components/loading/loading.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { PostBidComponent } from './pages/post-bid/post-bid.component';
+import { DeliveryComponent } from './pages/delivery/delivery.component';
  
 export const MaterialModules = [
   MatToolbarModule,
@@ -72,6 +73,7 @@ export const MaterialModules = [
     LoadingComponent,
     RegisterComponent,
     PostBidComponent,
+    DeliveryComponent,
   ],
   imports: [
     BrowserModule,

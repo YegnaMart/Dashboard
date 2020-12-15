@@ -8,7 +8,7 @@ import { AuthService } from './auth.service';
 })
 export class HttpService {
 
-  private url = 'http://172.20.10.6:5000';
+  private url = 'https://44d21632b5c5.ngrok.io';
   constructor(private httpClient: HttpClient, private authService: AuthService) {
     
   }
@@ -45,6 +45,10 @@ export class HttpService {
   public productList(){
 
     return this.httpClient.get(this.url + '/product/get_products', {}); 
+  }
+
+  public getDeliveries(headers){
+    return this.httpClient.get(this.url + '/delivery/available_delivery', {headers:headers}); 
   }
 
 }
