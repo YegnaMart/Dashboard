@@ -8,7 +8,7 @@ import { AuthService } from './auth.service';
 })
 export class HttpService {
 
-  private url = 'https://44d21632b5c5.ngrok.io';
+  private url = 'https://yegnamart.guzogo.com';
   constructor(private httpClient: HttpClient, private authService: AuthService) {
     
   }
