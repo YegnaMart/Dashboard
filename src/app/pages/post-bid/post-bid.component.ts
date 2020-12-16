@@ -49,7 +49,6 @@ export class PostBidComponent implements OnInit {
       regionOfOrigin: this.selectedWarehouse,
       price: this.price,
       description: this.description,
-      productImage: "",
       postedBy: this.postedBy._id
     }
 
@@ -63,12 +62,12 @@ export class PostBidComponent implements OnInit {
 
 
 
-      if (_product.sucess) {
+      if (_product.success) {
 
         let bid = {
 
           biddingFee: this.biddingFee,
-          product: _product._id,
+          product: _product.data._id,
           initialBiddingPrice: this.initialBiddingFee,
           closingDate: moment().add(1.5, 'hours').valueOf(),
           postedBy: this.postedBy._id

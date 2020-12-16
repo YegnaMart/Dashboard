@@ -18,10 +18,14 @@ export class RegisterComponent implements OnInit {
     role : ''
   }
 
-  public roles = [
-    "Farmer",
-    "StockManager",
-    "DeliveryAgent"
+  public roles = [    
+      'Farmer',
+      'DeliveryPersonnel',
+      'Admin',
+      'Consumer',
+      'StockManager',
+      'DeliveryAgent',
+      'Bidders',
   ]
 
   loggingIn = false;
