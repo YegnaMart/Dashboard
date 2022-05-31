@@ -8,7 +8,7 @@ import { AuthService } from './auth.service';
 })
 export class HttpService {
 
-  private url = 'https://yegnamart.guzogo.com';
+  private url = 'http://localhost:5000';
   constructor(private httpClient: HttpClient, private authService: AuthService) {
     
   }

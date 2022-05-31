@@ -15,6 +15,7 @@ export class RegisterComponent implements OnInit {
     fullName: '',
     password: '',
     phoneNo : '',
+    email:`yegnamart${this.generateRandomNDigits(2)}@gmail.com`,
     role : ''
   }
 
@@ -35,6 +36,12 @@ export class RegisterComponent implements OnInit {
   public isLoading : Boolean = true;
   ngOnInit(): void {
   }
+
+
+   generateRandomNDigits(n)  {
+    return Math.floor(Math.random() * (9 * (Math.pow(10, n)))) + (Math.pow(10, n));
+  }
+  
 
   doRegisteration(){
 
@@ -59,8 +66,8 @@ export class RegisterComponent implements OnInit {
       
 
     },err => {
-      
-      this.toastr.error ( "Unable to Login , please try again later" , ' YegnaMart');
+      console.log(err)
+      this.toastr.error ( err.error.message , ' YegnaMart');
       
     })
 
