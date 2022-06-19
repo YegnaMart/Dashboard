@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { HttpService } from 'src/app/services/http.service';
 import * as moment from 'moment';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-post-bid',
   templateUrl: './post-bid.component.html',
@@ -9,8 +11,20 @@ import * as moment from 'moment';
 })
 export class PostBidComponent implements OnInit {
 
+  productForm = new FormGroup({
+    productName: new FormControl(''),
+    regionOfOrigin: new FormControl(''),
+    productCategory: new FormControl(''),
+    amount: new FormControl(''),
+    price: new FormControl(''),
+    description: new FormControl(''),
+    biddingFee: new FormControl(''),
+    postedBy: new FormControl(''),
+    role: new FormControl(''),
+    productImage: new FormControl('')
+});
   public isLoading: Boolean = true;
-  constructor(private httpService: HttpService, private toastr: ToastrService) { }
+  constructor(private httpService: HttpService, private router: Router, private formbuilder: FormBuilder, private toastr: ToastrService) { }
 
   public warehouses: any;
 
@@ -31,7 +45,6 @@ export class PostBidComponent implements OnInit {
     this.role = localStorage.getItem("role")
     this.httpService.getWarehouses().subscribe((_warehouses: any) => {
 
-
       this.warehouses = _warehouses;
       console.log(this.warehouses)
       setTimeout(() => {
@@ -40,26 +53,33 @@ export class PostBidComponent implements OnInit {
     })
   }
 
+  onChange(event) {
+    if (event.target.files.length > 0) {
+        const file = event.target.files[0];
+        this.productForm.get('productImage').setValue(file);
+    }
+}
+
   postProduct() {
 
-    var product = {
-      productName: this.productName,
-      category: this.productCategory,
-      amount: this.amount,
-      regionOfOrigin: this.selectedWarehouse,
-      price: this.price,
-      description: this.description,
-      postedBy: this.postedBy._id
-    }
+    const formData = new FormData();
+    formData.append('productName', this.productForm.get('productName').value);
+    formData.append('category', this.productForm.get('productCategory').value);
+    formData.append('regionOfOrigin', this.productForm.get('regionOfOrigin').value);
+    formData.append('price', this.productForm.get('price').value);
+    formData.append('amount', this.productForm.get('amount').value);
+    formData.append('description', this.productForm.get('description').value);
+    formData.append('postedBy', this.postedBy._id);
+    formData.append('productImage', this.productForm.get('productImage').value);
+    console.log( "form data", this.productForm.get("amount").value)
 
 
     var header = {
-      'Content-Type': 'application/json',
       'Authorization': this.postedBy.token
     }
 
-    this.httpService.postProduct(product, header).subscribe((_product: any) => {
-
+    this.httpService.postProduct(formData, header).subscribe((_product: any) => {
+      console.log("product", _product)
 
 
       if (_product.success) {
@@ -79,6 +99,7 @@ export class PostBidComponent implements OnInit {
 
             if (_bid.success) {
               this.toastr.success(_bid.message, "YegnaMart")
+              this.router.navigate(['/'])
             } else {
 
               this.toastr.error(_bid.message, "YegnaMart")
@@ -92,7 +113,8 @@ export class PostBidComponent implements OnInit {
         } else {
 
 
-          this.toastr.success(_product.message, "YegnaMart")
+          this.toastr.success(_product.message, "YegnaMart");
+           this.router.navigate(['/'])
         }
 
 

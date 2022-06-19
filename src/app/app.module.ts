@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule ,ReactiveFormsModule} from '@angular/forms';
 import { NgSelectModule } from '@ng-select/ng-select';
 import {
   MatTabsModule
@@ -57,7 +57,8 @@ export const MaterialModules = [
   MatInputModule,
   MatRadioModule,
   MatCheckboxModule,
-  FormsModule
+  FormsModule,
+  ReactiveFormsModule
 ];
 
 @NgModule({
